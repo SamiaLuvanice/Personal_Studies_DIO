@@ -1,0 +1,8 @@
+print(11 + 22)
+print(True)
+print("Olá, mundo!")
+print(3.14)
+print(type(11))
+print(type(True))
+print(type("Olá, mundo!"))
+print(type(3.14))
