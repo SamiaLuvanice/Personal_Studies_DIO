@@ -1,11 +1,21 @@
 import { useState } from 'react'
+import './App.css'
+import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  //Variáveis de ambiente Vite
+  console.log("MODE:", import.meta.env.MODE); // 'development' ou 'production'
+  console.log("BASE_URL:", import.meta.env.BASE_URL); // URL base do projeto
+  console.log("PROD:", import.meta.env.PROD); // true se estiver em produção
+  console.log("DEV:", import.meta.env.DEV); // true se estiver em desenvolvimento
+  console.log("SSR:", import.meta.env.SSR); // true se estiver em SSR (Server-Side Rendering)
+
+  //Variáveis de ambiente personalizadas devem começar com VITE_ para serem expostas no código
+  console.log("VITE_API_URL:", import.meta.env.VITE_API_URL); // Variável personalizada definida no .env
 
   return (
     <>
