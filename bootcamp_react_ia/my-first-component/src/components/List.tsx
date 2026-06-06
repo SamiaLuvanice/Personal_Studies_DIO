@@ -1,12 +1,19 @@
 export function List() {
+  const name = 'Sâmia';
+
+
+  function formatDate(date: Date): React.ReactNode {
+    return new Intl.DateTimeFormat(
+      'pt-BR',
+      { weekday: 'long' }
+    ).format(date);
+  }
+
   return (
     <>
-      <h1>Feira - Lista de Compras</h1>
-      <img
-        src="https://instafruta.com.br/wp-content/uploads/2022/11/feira-online.jpeg"
-        alt="Feira"
-        width={400}
-      />
+      <h2>Lista de Compras da {name}</h2>
+      <p><b>Dia da Feira:</b> {formatDate(new Date())}</p>
+
       <ul className="list">
         <li>Arroz</li>
         <li>Feijão</li>
