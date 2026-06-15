@@ -1,5 +1,13 @@
+interface ListDetails {
+  name: string;
+  day: React.ReactNode;
+}
+
 export function List() {
-  const name = 'Sâmia';
+  const listDetails: ListDetails = {
+    name: 'Sâmia Luvanice',
+    day: formatDate(new Date())
+  };
 
 
   function formatDate(date: Date): React.ReactNode {
@@ -11,10 +19,10 @@ export function List() {
 
   return (
     <>
-      <h2>Lista de Compras da {name}</h2>
-      <p><b>Dia da Feira:</b> {formatDate(new Date())}</p>
+      <h2>Lista de Compras da {listDetails.name}</h2>
+      <p><b>Dia da Feira:</b> {listDetails.day}</p>
 
-      <ul className="list">
+      <ul className="list" style={{ color: 'pink', backgroundColor: 'black', textAlign: 'left' }}>
         <li>Arroz</li>
         <li>Feijão</li>
         <li>Macarrão</li>
