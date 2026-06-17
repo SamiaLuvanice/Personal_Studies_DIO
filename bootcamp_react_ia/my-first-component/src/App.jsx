@@ -9,6 +9,7 @@ function App() {
     <h1 className='title'>Receitas Starbucks</h1>
       <Recipe 
         imageSrc={IcedCaramelImage} 
+        imageSize={300}
         coffee={{ 
           name: "Iced Caramel", 
           description: "A delicious iced caramel drink that combines the rich flavors of caramel with the refreshing chill of ice. Perfect for a hot day or as a sweet treat any time.",
