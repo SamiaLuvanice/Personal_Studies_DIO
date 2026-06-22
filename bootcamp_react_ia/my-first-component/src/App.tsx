@@ -11,14 +11,26 @@ function Step({ step, instruction }: StepProps) {
   );
 }
 
+const stepsInstructions = [
+  "Criar uma função do componente",
+  "Definir as props do componente",
+  "Implementar a lógica do componente",
+  "Retornar o JSX do componente"
+];
+
 function App() {
+  const steps = [];
+  for (let i = 0; i < stepsInstructions.length; i++) {
+    steps.push(
+      <Step key={i} step={i + 1} instruction={stepsInstructions[i]} />
+    );
+  }
+
   return (
     <>
       <h1>Estrutura de um componente</h1>
       <ul>
-        <Step step={1} instruction="Criar uma função do componente" />
-        <Step step={2} instruction="Definir as props do componente" />
-        <Step step={3} instruction="Implementar a lógica do componente" />
+        {steps}
       </ul>
     </>
   );
