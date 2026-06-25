@@ -1,11 +1,21 @@
 import "./App.css";
-import { DarkModeButton } from "./components/DarkModeButton";
+import { Button } from "./components/Button";
+import { SwitchThemeButton } from "./components/SwitchThemeButton";
 
 function App() {
+
+  const handleHoursClick = () => {
+    const currentTime = new Date();
+    alert(`Agora são ${currentTime.getHours()}:${currentTime.getMinutes()}`);
+  }
+
   return (
-    <div className="App">
-      <DarkModeButton />
-    </div>
+    <>
+    <h3>Switch Theme Button</h3>
+    <SwitchThemeButton theme="light">☀️</SwitchThemeButton>
+    <SwitchThemeButton theme="dark">🌙</SwitchThemeButton>
+    <Button onClick={handleHoursClick}> Que horas são? </Button>
+    </>
   );
 }
 

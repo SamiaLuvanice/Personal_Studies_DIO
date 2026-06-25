@@ -52,3 +52,12 @@ ul {
   text-align: left;
 }
 
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
