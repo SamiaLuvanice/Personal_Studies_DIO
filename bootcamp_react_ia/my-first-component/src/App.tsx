@@ -1,21 +1,14 @@
 import "./App.css";
-import { Button } from "./components/Button";
-import { SwitchThemeButton } from "./components/SwitchThemeButton";
+import Item from "./Item";
 
 function App() {
-
-  const handleHoursClick = () => {
-    const currentTime = new Date();
-    alert(`Agora são ${currentTime.getHours()}:${currentTime.getMinutes()}`);
-  }
-
   return (
-    <>
-    <h3>Switch Theme Button</h3>
-    <SwitchThemeButton theme="light">☀️</SwitchThemeButton>
-    <SwitchThemeButton theme="dark">🌙</SwitchThemeButton>
-    <Button onClick={handleHoursClick}> Que horas são? </Button>
-    </>
+    <div className="list">
+      <h1>Itens para colocar na mala</h1>
+      <Item name="Camisa" quantity={2} />
+      <Item name="Calça" quantity={1} />
+      <Item name="Tênis" quantity={1} />
+    </div>
   );
 }
 
