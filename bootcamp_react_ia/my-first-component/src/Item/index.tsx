@@ -1,13 +1,14 @@
 interface ItemProps {
     name: string;
-    quantity: number;
+    check?: boolean;
 }
 
-const Item: React.FC<ItemProps> = ({ name, quantity }) => {
-    return (
-        <div className="item">
-            {name} - {quantity}
-        </div>
+const Item: React.FC<ItemProps> = ({ name, check }) => {
+
+    if (check) {
+        return (<div className="item"> <del>✅ {name} </del></div>)
+    }
+    return (<div className="item"> ❌ {name} </div>
     )
 }
 
