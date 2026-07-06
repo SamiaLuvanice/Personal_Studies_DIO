@@ -2,11 +2,11 @@ import "./App.css";
 import Item from "./Item";
 
 const itemsList = [
-  { id: 1, name: "Meias", check: true },
-  { id: 2, name: "Camisetas", check: false },
-  { id: 3, name: "Calças", check: true },
-  { id: 4, name: "Tênis", check: false },
-  { id: 5, name: "Chinelo", check: true }
+  { id: 1, name: "Meias", check: true, count: 2 },
+  { id: 2, name: "Camisetas", check: false, count: 3 },
+  { id: 3, name: "Calças", check: true, count: 1 },
+  { id: 4, name: "Tênis", check: false, count: 0 },
+  { id: 5, name: "Chinelo", check: true, count: 2 }
 ];
 
 function App() {
