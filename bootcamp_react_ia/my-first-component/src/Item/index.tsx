@@ -1,19 +1,27 @@
+import { useState } from "react";
+
 interface ItemProps {
     name: string;
     check?: boolean;
 }
 
 const Item: React.FC<ItemProps> = ({ name, check }) => {
+
+    const [isChecked, setCheck] = useState(check);
     
+    const handleClick = () => {
+        //ser for true, vira false, se for false, vira true
+        setCheck(!isChecked);
+    }
+
     let itemName: React.ReactNode = name;
-    if (check) {
+    if (isChecked) {
         itemName = <del>{name}</del>;
     }
 
     return (
-        <div className="item">
-            {check ? "✅" : "❌"} 
-            {check ? <del>{name}</del> : name}               
+        <div className="item" onClick={handleClick}>
+            {isChecked ? "✅" : "❌"} 
             {itemName} 
         </div>
     );
