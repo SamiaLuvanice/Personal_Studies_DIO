@@ -1,14 +1,10 @@
 import "./App.css";
-import CounterClassComponent from "./components/CounterClassComponent";
-import CounterFunctionalComponent from "./components/CounterFunctionalComponent";
+import ProductsList from "./components/ProductsLit";
 
 
 function App() {
   return (
-    <>
-      <CounterFunctionalComponent message="Functional Component:" />
-      <CounterClassComponent message="Class Component:" />
-    </>
+    <ProductsList />
   );
 }
 

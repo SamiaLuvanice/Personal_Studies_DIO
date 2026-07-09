@@ -5,23 +5,28 @@
   text-align: center;
 }
 
-.list h1 {
-  font-size: 1.5rem;
-}
-
-.item {
-  background-color: #f5f5f5;
-  color: #333;
-  border-radius: 0.5px;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
+.list {
   text-align: left;
-  cursor: pointer;
+  padding: 0;
 }
 
-.button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
+.list li {
+  list-style: none;
+  color: white;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  width: 500px;
+}
+.list li .price {
+  color: #dde017;
+}
+
+.list li p:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.list li p {
+  margin: 0;
 }
