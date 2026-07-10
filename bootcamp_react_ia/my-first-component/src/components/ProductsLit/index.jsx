@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from "react";
+import { API_BASE_URL } from "../../config";
+import ProductItem from "../ProductItem";
+
 export default function ProductsList() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -34,14 +38,8 @@ export default function ProductsList() {
     <div>
       <h2>Produtos</h2>
       <ul className="list">
-        {products.map((id, name, price, description) => (
-          <li key={id}>
-            <p>
-              #{id} {name}
-            </p>
-            <p className="price">R$ {price.toFixed(2)}</p>
-            <p>{description}</p>
-          </li>
+        {products.map((product) => (
+          <ProductItem key={product.id} product={product} />
         ))}
       </ul>
     </div>
