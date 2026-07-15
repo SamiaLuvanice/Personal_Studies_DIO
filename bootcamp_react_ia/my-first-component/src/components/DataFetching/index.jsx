@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { API_BASE_URL } from '../../config';
+import React, { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../settings";
 
 const withDataFetching = (title, WrappedComponent, endpoint) => {
-  const WithDataFetching = (props) => {
+  return () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    
     useEffect(() => {
       const controller = new AbortController();
 
@@ -21,16 +21,18 @@ const withDataFetching = (title, WrappedComponent, endpoint) => {
 
           if (!response.ok) {
             throw new Error(
-              `Failed to fetch data: ${response.status} ${response.statusText}`
+              `Failed to fetch data: ${response.status} ${response.statusText}`,
             );
           }
 
           const result = await response.json();
           setData(result);
         } catch (err) {
-          if (err.name !== 'AbortError') {
+          if (err.name !== "AbortError") {
             console.error(`Error fetching data from ${endpoint}:`, err);
-            setError(err.message || 'An error occurred while fetching the data.');
+            setError(
+              err.message || "An error occurred while fetching the data.",
+            );
           }
         } finally {
           setIsLoading(false);
@@ -75,7 +77,7 @@ const withDataFetching = (title, WrappedComponent, endpoint) => {
   };
 
   WithDataFetching.displayName = `withDataFetching(${
-    WrappedComponent.displayName || WrappedComponent.name || 'Component'
+    WrappedComponent.displayName || WrappedComponent.name || "Component"
   })`;
 
   return WithDataFetching;
