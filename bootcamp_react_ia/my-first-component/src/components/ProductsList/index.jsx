@@ -1,7 +1,7 @@
+import withDataFetching from "../DataFetchingClassComponent";
 import ProductItem from "../ProductItem";
 
-const ProductsList = ({ data: products }) =>  {
-  
+const ProductsList = ({ data: products }) => {
   return (
     <div>
       <h2>Produtos</h2>
@@ -12,7 +12,11 @@ const ProductsList = ({ data: products }) =>  {
       </ul>
     </div>
   );
-}
+};
 
-const ProductsListWithData = withDataFetching("Products", ProductsList, "./api/products");
+const ProductsListWithData = withDataFetching(
+  "Products",
+  ProductsList,
+  "./api/products",
+);
 export default ProductsListWithData;

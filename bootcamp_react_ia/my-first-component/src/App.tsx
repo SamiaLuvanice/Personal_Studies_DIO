@@ -1,9 +1,12 @@
-import "./App.css";
-import ProductsListWithData from "./components/ProductsList/ProductsListWithData";
+import ClientsListWithData from "./components/ClientsList";
+import ProductsListWithData from "./components/ProductsList";
 
 function App() {
   return (
-    <ProductsListWithData />
+    <div>
+      <ClientsListWithData />
+      <ProductsListWithData />
+    </div>
   );
 }
 
